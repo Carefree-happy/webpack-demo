@@ -6,18 +6,13 @@ module.exports = {
     entry: {
         index: "./src/index.js",
     },
-
-    devtool: "inline-source-map",
-    devServer: {
-        static: "./dist",
-    },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Development",
+            title: "Caching",
         }),
     ],
     output: {
-        filename: "[name].bundle.js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
